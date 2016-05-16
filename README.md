@@ -1,0 +1,1 @@
+# nodebb-plugin-mega-knights-startpage
