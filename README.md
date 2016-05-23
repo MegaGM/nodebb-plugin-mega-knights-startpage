@@ -1,1 +1,1 @@
-# nodebb-plugin-mega-knights-startpage
+## This plugin is NOT production ready

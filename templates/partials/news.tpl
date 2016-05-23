@@ -1,6 +1,6 @@
-<div class="category startpage">
+<div class="category">
 	<div class="news-header">
-		<span class="fa-stack fa-lg"><i style="color:#ffffff;" class="fa fa-circle fa-stack-2x"></i><i style="color:#f55151;" class="fa fa-bell-o fa-stack-1x"></i></span>
+		<span class="fa-stack fa-lg" style="margin-left: 10px;"><i style="color:#f5f7f7;" class="fa fa-circle fa-stack-2x"></i><i style="color:#f55151;" class="fa fa-bell-o fa-stack-1x"></i></span>
 		<span class="news-header-text">Местные новости</span>
 	</div>
 	<ul component="category" class="topic-list news-list">
