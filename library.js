@@ -36,24 +36,14 @@
 		},
 		page: function (req, res, next) {
 			async.parallel({
+				chat: async.apply(chat.getChat, req, res),
 				news: async.apply(news.getNews, req, res),
-				chatUserlist: async.apply(chat.getUsersData, req, res),
 				categories: async.apply(categories.getCategories, req, res)
 			}, function (err, results) {
 				if (err) return console.error('Block news error: ', err);
-				data.userlist = [{
-					name: 'Mega'
-				}, {
-					name: 'Sanitize'
-				}, {
-					name: 'Karen-yant'
-				}, {
-					name: 'Synchroomonnica'
-				}];
-
+				data.chat = results.chat;
 				data.news = results.news;
 				data.categories = results.categories;
-				data.chat.userlist = results.chatUserlist;
 				res.render('start', data);
 			});
 		}

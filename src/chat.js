@@ -11,8 +11,7 @@ var _ = require('lodash'),
 	topics = require.main.require('./src/topics'),
 	templates = require.main.require('templates.js'),
 	privileges = require.main.require('./src/privileges'),
-	newsTemplate = fs.readFileSync(path.join(__dirname, '../templates/partials/news.tpl')).toString(),
-	// newsTemplate = fs.readFileSync(path.join(__dirname, '../templates/partials/newsBackup.tpl')).toString(),
+	chatTemplate = fs.readFileSync(path.join(__dirname, '../templates/partials/chat.tpl')).toString(),
 	Block = {
 		data: {
 			userIds: [],
@@ -37,14 +36,21 @@ var getUserData = function (callback) {
 	});
 };
 
-Block.getUsersData = function (_req, _res, callback) {
+Block.getChat = function (_req, _res, callback) {
 	req = _req;
 	res = _res;
 	async.series({
 		getOnline: getOnline,
 		getUserData: getUserData
 	}, function (err, results) {
-		callback(err, Block.data.usersData);
+		templates.parse(chatTemplate, {
+			userlist: Block.data.usersData,
+			config: {
+				relative_path: nconf.get('relative_path')
+			}
+		}, function (html) {
+			callback(err, html);
+		});
 	});
 };
 

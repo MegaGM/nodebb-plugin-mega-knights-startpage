@@ -3,7 +3,8 @@
 	"name": "Start page for Knights",
 	"library": "./library.js",
 	"scripts": [
-		"client/js/client.js"
+		"client/js/client.js",
+		"client/js/chat.js"
 	],
 	"less": ["client/less/styles.less"],
 	"templates": "templates",
