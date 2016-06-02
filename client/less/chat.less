@@ -1,0 +1,123 @@
+.chat-layout {
+	display   : flex;
+	min-height: 300px;
+	padding   : 5px 0;
+	border    : 1px solid #dedede;
+	height    : 100%;
+
+	.header {
+		display      : none;
+		flex         : 0;
+		border       : 1px solid #dedede;
+		border-bottom: 1px solid #f3f3f3;
+		border-radius: 10px 10px 0 0;
+
+		.text {
+			color         : #e05959;
+			font-size     : 1.4em;
+			vertical-align: middle;
+		}
+	}
+
+	.columns {
+		flex          : 1;
+		background    : #fff;
+		display       : flex;
+		flex-direction: row;
+
+		.roomlist-column {
+			flex           : 0 0 10%;
+			border-right   : 1px solid #f3f3f3;
+			display        : flex;
+			flex-direction : column;
+			align-items    : center;
+			justify-content: center;
+		}
+
+		.main-column {
+			flex           : 1;
+			display        : flex;
+			justify-content: center;
+
+			.temporary {
+				color     : #777;
+				font-size : 28px;
+				align-self: center;
+			}
+		}
+
+		.userlist-column {
+			flex: 0 0 16.66666667%;
+		}
+	}
+}
+
+.roomlist-column {
+	.room {
+		flex           : 1;
+		display        : flex;
+		flex-direction : column;
+		justify-content: center;
+
+		.link {
+			background-repeat: no-repeat;
+			margin-left      : 10px;
+			margin-right     : 10px;
+			min-width        : 16px;
+			min-height       : 16px;
+
+			&.guests {
+				background-image: url("/plugins/nodebb-plugin-mega-knights-startpage/img/icon_4168743929.png");
+			}
+
+			&.friends {
+				background-image: url("/plugins/nodebb-plugin-mega-knights-startpage/img/icon_135224872.png");
+			}
+
+			&.knights {
+				background-image: url("/plugins/nodebb-plugin-mega-knights-startpage/img/icon_1773649031.png");
+			}
+
+			&.officers {
+				background-image: url("/plugins/nodebb-plugin-mega-knights-startpage/img/icon_3707010802.png");
+			}
+
+			&.commanders {
+				background-image: url("/plugins/nodebb-plugin-mega-knights-startpage/img/commanders.png");
+			}
+		}
+	}
+}
+
+.userlist-column {
+	.userlist {
+		margin         : 0;
+		padding        : 0;
+		list-style-type: none;
+		max-height     : 100%;
+		overflow-y     : auto;
+
+		a {
+			color: #555;
+		}
+
+		& li {
+			padding      : 8px 15px;
+			border-bottom: 1px solid #f2efef;
+			border-left  : 1px solid #f3f3f3;
+			list-style   : none;
+			white-space  : nowrap;
+			overflow     : hidden;
+			text-overflow: ellipsis;
+
+			&:last-child {
+				border-bottom: 1px solid #f3f3f3;
+			}
+
+			&:hover {
+				background: #bfe3f2;
+				cursor    : pointer;
+			}
+		}
+	}
+}

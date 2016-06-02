@@ -1,6 +1,6 @@
-<div class="categories-header">
-	<span class="fa-stack fa-lg" style="margin-left: -10px;"><i style="color:#f5f7f7;" class="fa fa-circle fa-stack-2x"></i><i style="color:#666;" class="fa fa-list fa-stack-1x"></i></span>
-	<span class="categories-title">[[pages:categories]]</span>
+<div class="header">
+	<span class="text fa-stack fa-lg" style="margin-left: -10px;"><i style="color:#f5f7f7;" class="fa fa-circle fa-stack-2x"></i><i style="color:#666;" class="fa fa-list fa-stack-1x"></i></span>
+	<span class="text categories-title">[[pages:categories]]</span>
 </div>
 <ul class="categories" itemscope itemtype="http://www.schema.org/ItemList">
 	<!-- BEGIN categories -->

@@ -1,73 +1,55 @@
-.startpage {
-	.news-container {
-		.category {
-			margin-right: -15px;
-		}
+@import "./news.less";
+@import "./chat.less";
 
-		ul > li .content h2 {
-			margin-left: 0;
-		}
+.chat-news-layout {
+	display     : flex;
+	margin-left : -15px;
+	margin-right: -15px;
 
-		.news-list {
-			margin-top: 0;
-			padding   : 0 15px 5px;
-			border    : 1px solid #dedede;
-			border-top: none;
-		}
-
-		.news-header {
-			border-radius: 10px 10px 0 0;
-			border       : 1px solid #dedede;
-			border-bottom: 1px solid #f3f3f3;
-
-			.news-header-text {
-				font-size     : 1.4em;
-				color         : #e05959;
-				vertical-align: middle;
-			}
-		}
+	.chat-column {
+		flex          : 1;
+		padding-bottom: 10px;
 	}
 
-	.categories-container {
-		border       : 1px solid #dedede;
-		border-radius: 10px 10px 0 0;
-		border       : 1px solid #dedede;
-		padding      : 0 15px 5px;
+	.news-column {
+		flex          : none;
+		width         : 25%;
+		padding-left  : 15px;
+		padding-bottom: 10px;
+	}
+}
 
-		.categories-header {
-			border-bottom: 1px solid #f3f3f3;
-		}
+.categories-layout {
+	padding: 5px 15px;
+	border : 1px solid #dedede;
 
-		ul {
-			margin-bottom: 0;
+	& ul.categories {
+		margin: 0;
+	}
+
+	.header {
+		display: none;
+
+		.text {
+			color         : #e05959 !important;
+			font-size     : 1.4em;
+			vertical-align: middle;
 		}
 	}
 }
 
-.mega-chat {
-	background: #fff;
+.make-application-teaser {
+	margin-bottom: 10px;
 
-	.mega-chat__userlist {
-		list-style-type: none;
-		margin         : 0;
+	.text {
+		color         : #777;
+		line-height   : 1.42857143;
+		vertical-align: middle;
+		padding       : 6px 10px 7px;
+	}
 
-		& > li {
-			list-style   : none;
-			padding      : 5px 10px;
-			border-bottom: 1px solid #f2eded;
-
-			&:last-child {
-				border-bottom: none;
-			}
-
-			&:hover {
-				background: #bfe3f2;
-				cursor    : pointer;
-			}
-
-			a {
-				color: #555;
-			}
-		}
+	.button {
+		text-transform: uppercase;
+		margin-top    : -3px;
 	}
 }
