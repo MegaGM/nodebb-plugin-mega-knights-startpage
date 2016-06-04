@@ -8,9 +8,6 @@
 		nbbHelpers = require.main.require('./src/controllers/helpers'),
 		news = require('./src/news'),
 		chat = require('./src/chat'),
-		nconf = require.main.require('nconf'),
-		routerHelpers = require.main.require('./src/routes/helpers'),
-		ensureLoggedIn = require.main.require('connect-ensure-login'),
 		categories = require('./src/categories'),
 		data = {
 			title: 'Home',
@@ -24,15 +21,6 @@
 	var render = {
 		admin: function (req, res, next) {
 			res.render('admin/plugins/start.tpl', data);
-		},
-		application: function (req, res, next) {
-			console.log('application middleware!!');
-			if (res.locals.isAPI) {
-				console.log('application middleware isAPI!!!');
-			}
-			res.render('make-application', {
-				testData: 'this test dat'
-			});
 		},
 		page: function (req, res, next) {
 			async.parallel({
@@ -55,21 +43,11 @@
 			 * setup routes
 			 * ---------------------------------------------*/
 			params.router.get('/start',
-				ensureLoggedIn.ensureLoggedIn(nconf.get('relative_path') + '/login'),
 				params.middleware.buildHeader,
 				render.page);
 
 			params.router.get('/api/start',
 				render.page);
-
-			params.router.get('/make-application',
-				ensureLoggedIn.ensureLoggedIn(nconf.get('relative_path') + '/login'),
-				params.middleware.buildHeader,
-				render.application);
-
-			params.router.get('/api/make-application',
-				ensureLoggedIn.ensureLoggedIn(nconf.get('relative_path') + '/login'),
-				render.application);
 
 			params.router.get('/plugins/start',
 				params.middleware.admin.buildHeader,
