@@ -57,7 +57,7 @@ var getTopicIds = function (callback) {
 			async.each(Block.data.categories, function (category, callback) {
 				if (!category.canRead) return callback(null);
 				db.getSortedSetRevRange(category.cidRedis, 0, 4, function (err, tids) {
-					console.log('category categories getTopicIds: ', category, category.cidRedis);
+					// console.log('category categories getTopicIds: ', category, category.cidRedis);
 					Block.data.tids = _.concat(Block.data.tids, tids);
 					callback(err);
 				});
