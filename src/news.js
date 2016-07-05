@@ -27,9 +27,19 @@ class Category {
 
 var Block = {
 	data: {
-		categories: [new Category('15', 'general news')],
-		categoriesPublic: [new Category('20', 'general public news')],
 		tids: [],
+		categories: [
+			new Category('15', 'general news'),
+			new Category('28', 'general news'),
+			new Category('30', 'general news'),
+			new Category('32', 'general news')
+		],
+		categoriesPublic: [
+			new Category('21', 'general public news'),
+			new Category('29', 'general public news'),
+			new Category('31', 'general public news'),
+			new Category('33', 'general public news')
+		],
 		topics: [],
 		topicTags: []
 	}
