@@ -2,6 +2,9 @@
   "name": "nodebb-plugin-mega-knights-startpage",
   "version": "0.0.12",
   "description": "Start page for Knights site",
+	"nbbpm": {
+    "compatibility": "^0.7.1 || ^0.8.0 || ^0.9.0 || ^1.0.0"
+  },
   "main": "library.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
