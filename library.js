@@ -42,11 +42,11 @@
 			/* ---------------------------------------------
 			 * setup routes
 			 * ---------------------------------------------*/
-			params.router.get('/start',
+			params.router.get('/',
 				params.middleware.buildHeader,
 				render.page);
 
-			params.router.get('/api/start',
+			params.router.get('/api',
 				render.page);
 
 			params.router.get('/plugins/start',
