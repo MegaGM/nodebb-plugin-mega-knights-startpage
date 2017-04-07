@@ -24,7 +24,8 @@
 		},
 		page: function (req, res, next) {
 			async.parallel({
-				chat: async.apply(chat.getChat, req, res),
+        // FIXME: temporarily disable chat in favor to a picture
+				// chat: async.apply(chat.getChat, req, res),
 				news: async.apply(news.getNews, req, res),
 				categories: async.apply(categories.getCategories, req, res)
 			}, function (err, results) {
