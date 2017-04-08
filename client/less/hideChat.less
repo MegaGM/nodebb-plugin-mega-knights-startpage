@@ -8,7 +8,9 @@
 	margin-top: -30px;
 
 	.chat-column {
-		flex: 1;
+		flex-grow: 10;
+		flex-shrink: 1;
+		flex-basis: 25%;
 		padding-bottom: 10px;
 
 		.chat-layout {
@@ -21,7 +23,9 @@
 	}
 
 	.news-column {
-		flex: 1;
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: 25%;
 		padding-bottom: 10px;
 	}
 }
@@ -48,8 +52,6 @@
 		flex-direction: row;
 
 		.chat-column {
-			flex: 1;
-
 			.chat-layout {
 				position: relative;
 				background: url('/plugins/nodebb-plugin-mega-knights-startpage/img/startpage_bg_large.jpg');
@@ -60,9 +62,7 @@
 		}
 
 		.news-column {
-			flex: none;
-			width: 25%;
-			padding-left: 15px;
+			// padding-left: 15px;
 		}
 	}
 }
