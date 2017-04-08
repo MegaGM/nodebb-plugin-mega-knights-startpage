@@ -1,0 +1,45 @@
+/**
+ * xs, initial styles
+ */
+.chat-news-layout {
+	display: flex;
+	flex-direction: column; // display vertical
+	margin-left: -15px; // remove row paddings
+	margin-right: -15px;
+	margin-top: -30px; // make image start at the end of header
+
+	.chat-column {
+		flex-grow: 10;
+		flex-shrink: 1;
+		flex-basis: 25%;
+
+		.chat-layout {
+			position: relative; // to be able to use position absolute inside it
+			background-image: url('/plugins/nodebb-plugin-mega-knights-startpage/img/startpage_bg_small.jpg');
+			background-position: 50%;
+			background-repeat: no-repeat;
+			background-size: cover;
+		}
+	}
+
+	.news-column {
+		flex-grow: 1;
+		flex-shrink: 0;
+		flex-basis: 25%;
+	}
+}
+
+/**
+ * sm, md, lg
+ */
+@media (min-width: @screen-sm-min) {
+	.chat-news-layout {
+		flex-direction: row; // display horizontal
+
+		.chat-column {
+			.chat-layout {
+				background-image: url('/plugins/nodebb-plugin-mega-knights-startpage/img/startpage_bg_large.jpg');
+			}
+		}
+	}
+}
